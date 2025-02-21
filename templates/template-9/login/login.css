@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.login-variant-9 .login-main-block {
+    margin-top: 30px;
+}
+
+.login-variant-9 .right-image-container .right-imge {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 30px;
+}
+
+
+.login-variant-9 .login-main-block .logo-section {
+    text-align: center;
+    margin-bottom: 8px;
+    margin-top: 30px;
+
+}
+
+.login-variant-9 .login-main-block h2 {
+    font-size: 24px;
+    text-align: center;
+    font-weight: 500;
+}
+
+
+.login-variant-9 .login-left-section {
+    width: 80%;
+    margin: auto;
+}
+
+.login-variant-9 .login-left-section .login-box {
+    /* padding: 30px; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: var(--white-color);
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.login-variant-9 .login-left-section p {
+    font-weight: 200;
+    font-size: 15px;
+}
+
+.login-variant-9 .login-form {
+    width: 100%;
+}
+
+.login-variant-9 .login-form label {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.login-variant-9 .input-box {
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color) !important;
+    border-radius: 10px;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    height: 45px;
+}
+
+.login-variant-9 .input-box::placeholder {
+    color: var(--placeholder-color);
+    font-weight: 200;
+}
+
+.login-variant-9 .input-box:focus {
+    box-shadow: 0 0 0 0.25rem var(--primary-color-rgba);
+    outline: none;
+}
+
+
+.login-variant-9 .remember-check-box input {
+    margin-right: 5px;
+}
+
+/* .login-variant-9 .remember-check-box input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    accent-color: var(--primary-color);
+} */
+.login-variant-9 .remember-check-box input[type="checkbox"] {
+    appearance: none;
+    width: 17px;
+    height: 17px;
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.login-variant-9 .remember-check-box input[type="checkbox"]:checked {
+    background-color: var(--primary-color);
+}
+
+.login-variant-9 .remember-check-box input[type="checkbox"]::before {
+    content: "✔";
+    color: var(--white-color);
+    /* White tick mark */
+    font-size: 14px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.login-variant-9 .remember-check-box input[type="checkbox"]:checked::before {
+    display: block;
+}
+
+
+.remember-check-box label,
+.remember-check-box input,
+.remember-check-box+.forgot-password-link {
+    font-weight: 200 !important;
+    vertical-align: middle;
+    font-size: 13px !important;
+}
+
+.login-variant-9 .remember-check-box+.forgot-password-link {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 15px;
+}
+
+.login-variant-9 .password-section {
+    position: relative;
+}
+
+.login-variant-9 .password-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.login-variant-9 .eye-icon {
+    position: absolute;
+    right: 20px;
+    font-size: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.login-variant-9 .btn-login {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 10px 40px;
+    border-radius: 10px;
+}
+
+.login-variant-9 .btn-login:hover {
+    background-color: var(--primary-color-rgba);
+    color: var(--primary-color);
+}
+
+@media only screen and (max-width:991px) {
+    .login-variant-9 .right-image-container {
+        display: none;
+    }
+
+    .login-variant-9 .login-left-section {
+        width: 80%;
+        margin: auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .login-variant-9 .btn-login {
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width:767px) {
+    .login-variant-9 .login-left-section {
+        width: 100%;
+        margin: auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width:575px) {
+    .login-variant-9 .logo-section h3 {
+        margin-bottom: 0px;
+    }
+
+    .login-variant-9 .login-main-block h3 {
+        font-size: 18px;
+    }
+
+    .login-variant-9 .login-main-block .logo-section {
+        text-align: center;
+        margin-bottom: 8px;
+        margin-top: 0px;
+    }
+
+    .login-variant-9 .login-left-section .login-box {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background: var(--white-color);
+        border-radius: 10px;
+        margin-top: 0px;
+    }
+
+}

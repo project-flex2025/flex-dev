@@ -1,0 +1,11 @@
+:root {
+    --primary-color: #6A8533;
+    --primary-hover: #567029;
+    --background-color: #f8f9fa;
+    --background-color2: #ffffff96;
+    --text-color: #000;
+    --input-border: black;
+   --text-white: #fff;
+   --box-shadow: 0 0 5px rgba(106, 133, 51, 0.5);
+   --box-shadow2: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,62 @@
+/* @import url('./css/bootstrap.min.css'); */
+@import url('./css/demo.css');
+@import url('./css/kaiadmin.min.css');
+
+body {
+  background: #EEEEEE !important;
+}
+
+.wrapper {
+  background: #EEEEEE;
+}
+
+.accordion-button {
+  font-weight: bold;
+}
+
+.mini-logo {
+  display: none;
+}
+
+.sidebar_minimize .mini-logo {
+  color: #000;
+  display: block;
+  padding-left: 10px;
+}
+
+
+.card {
+  border-radius: 15px !important;
+  border: none !important;
+}
+
+.dashboard-head {
+  color: #779341;
+}
+
+.accordion-body {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+.test-table th,
+td {
+  text-align: center;
+}
