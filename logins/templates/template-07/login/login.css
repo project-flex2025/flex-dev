@@ -1,0 +1,229 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.login-container {
+    display: flex;
+    width: 100%;
+    background: var(--background-dark);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.login-form-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.img-section {
+    flex: 2;
+    position: relative;
+}
+
+.img-section .login-img-logo {
+    position: absolute;
+    width: 200px;
+    left: 20px;
+    height: 60px;
+    top: 40px;
+}
+
+
+.img-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* position: relative; */
+}
+
+.right-section {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo-section {
+    display: none;
+}
+
+
+
+.login-head {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.mail-section {
+    margin-top: 25px;
+}
+
+.mail-section .input-group {
+    border-bottom: 1px solid var(--text-color);
+}
+
+
+
+.pass-section {
+    margin-top: 25px;
+}
+
+.pass-section .input-group {
+    border-bottom: 1px solid var(--text-color);
+}
+
+.login-title {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+.input-group-text {
+    background: transparent !important;
+    border: none !important;
+    color: #fff !important;
+    padding: 10px 0px !important;
+}
+
+.form-check-label {
+    color: var(--text-color);
+    font-size: 12px;
+}
+
+.forgot-password {
+    font-size: 12px;
+}
+
+.form-label {
+    color: var(--text-color);
+    font-size: 12px;
+}
+
+.login-check-section {
+    margin-top: 15px;
+}
+
+.form-control {
+    background: transparent !important;
+    border: none !important;
+    color: var(--text-color) !important;
+}
+
+.form-control::placeholder {
+    color: var(--text-color) !important;
+    opacity: 1 !important;
+}
+
+.login-btn {
+    width: 100%;
+    background: var(--primary-color) !important;
+    color: var(--text-color) !important;
+    font-weight: 500;
+    border-radius: 25px !important;
+    margin-top: 20px;
+}
+
+.login-btn:hover {
+    width: 100%;
+    background: var(--primary--hover-color) !important;
+    color: var(--text-color) !important;
+    font-weight: 500;
+    border-radius: 25px;
+    margin-top: 20px;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: none !important;
+    outline: none !important;
+    background: none !important;
+    color: var(--text-color) !important;
+}
+
+.form-control:focus::placeholder {
+    color: var(--text-color) !important;
+    opacity: 0.2 !important;
+}
+
+.forgot-password {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.login-variant-7 input[type="checkbox"] {
+    appearance: none;
+    width: 17px;
+    height: 17px;
+    background-color: var(--text-color);
+    border: 1px solid var(--text-color);
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.login-variant-7 input[type="checkbox"]:checked {
+    background-color: var(--primary-color);
+}
+
+.login-variant-7 input[type="checkbox"]::before {
+    /* content: "✔"; */
+    color: var(--white-color);
+    /* White tick mark */
+    font-size: 14px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.login-variant-7 input[type="checkbox"]:checked::before {
+    display: block;
+}
+
+@media only screen and (max-width:992px) {
+    .login-variant-7 .login-container .left-section {
+        display: none;
+
+    }
+
+    .right-section .logo-section {
+        display: block;
+        margin-bottom: 40px;
+    }
+
+    .login-container {
+        margin-top: 50px;
+        justify-content: center;
+    }
+
+    .login-main-section {
+        width: 100%;
+    }
+
+    .login-form-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width:375px) {
+    .right-section {
+        padding: 20px;
+    }
+}
+
+@media only screen and (max-width:320px) {
+    .right-section {
+        padding: 10px;
+    }
+
+    .logo-section {
+        margin-top: 20px;
+    }
+}

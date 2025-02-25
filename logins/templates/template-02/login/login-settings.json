@@ -1,0 +1,47 @@
+{
+  "Company Name": {
+    "value": "Evega",
+    "type": "text",
+    "validation": {
+      "required": true,
+      "customValidation": "lengthValidation",
+      "params": { "min": 3, "max": 20 }
+    }
+  },
+  "Brand Name": {
+    "value": "Flex",
+    "type": "text",
+    "validation": {
+      "required": true,
+      "customValidation": "lengthValidation",
+      "params": { "min": 3, "max": 20 }
+    }
+  },
+  "Caption": {
+    "value": "Flex is a place where you can automatically build applications",
+    "type": "text",
+    "validation": {
+      "required": true,
+      "customValidation": "lengthValidation",
+      "params": { "min": 30, "max": 70 }
+    }
+  },
+  "Login Side Image": {
+    "value": "login_side_image.png",
+    "type": "image",
+    "validation": {
+      "required": true,
+      "customValidation": "imageValidation",
+      "params": { "type": ["jpg", "png", "svg"] }
+    }
+  },
+  "Company Logo": {
+    "value": "company_logo.png",
+    "type": "image",
+    "validation": {
+      "required": true,
+      "customValidation": "imageValidation",
+      "params": { "type": ["jpg", "png", "svg"] }
+    }
+  }
+}

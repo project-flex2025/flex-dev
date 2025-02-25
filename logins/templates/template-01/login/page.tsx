@@ -1,36 +1,88 @@
 "use client";
-import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { signIn } from "next-auth/react";
 import Image from "next/image";
-import "./login.css";
-import LoginJson from "./login-settings.json";
 import { useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import LoginJson from "./login-settings.json";
+import "./login.css";
+import Cookies from "js-cookie";
+
+// Store username & password securely in cookies
+const setUserCredentials = (username: string, password: string): void => {
+  Cookies.set("username", username, {
+    expires: 7,
+    secure: true,
+    sameSite: "Strict",
+  });
+  Cookies.set("password", password, {
+    expires: 7,
+    secure: true,
+    sameSite: "Strict",
+  });
+};
+
+// Retrieve stored credentials
+const getUserCredentials = () => {
+  console.log(Cookies.get("password"));
+
+  return {
+    username: Cookies.get("username") || "",
+    password: Cookies.get("password") || "",
+  };
+};
+
+// Clear credentials
+const removeUserCredentials = () => {
+  Cookies.remove("username");
+  Cookies.remove("password");
+};
 
 const Login = () => {
   const router = useRouter();
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
-  const [showpassword, setShowPassword] = useState<boolean>(false);
+  const [showPassword, setShowPassword] = useState<boolean>(false);
   const [rememberMe, setRememberMe] = useState<boolean>(false);
+
+  console.log(showPassword, "password..", username, password);
+
+  // Load credentials if Remember Me was checked
+  useEffect(() => {
+    const savedCredentials = getUserCredentials();
+
+    console.log(savedCredentials, "saved cred");
+
+    if (savedCredentials.username && savedCredentials.password) {
+      setUsername(savedCredentials.username);
+      setPassword(savedCredentials.password);
+      setRememberMe(true);
+    }
+  }, []);
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    console.log("login button..");
-    console.log(username, password, "credass");
 
     try {
       const result = await signIn("credentials", {
         redirect: false,
-        username,
+        username, // Ensure backend expects "username"
         password,
       });
+
       if (result?.ok) {
-        toast.success("Login successful! Redirecting to dashboard");
+        toast.success("Login successful! Redirecting...");
+        if (rememberMe) {
+          setUserCredentials(username, password);
+        } else {
+          removeUserCredentials();
+        }
         router.push("/dashboard");
       } else {
-        toast.error("Login Error:" + result?.error);
+        toast.error(result?.error || "Invalid credentials");
       }
     } catch (err) {
       console.error("Login failed:", err);
@@ -58,8 +110,7 @@ const Login = () => {
         <div className="container">
           <div className="row">
             <div className="col-lg-6 col-md-12 ">
-              <div
-                className="login-left-section elevated-box">
+              <div className="login-left-section elevated-box">
                 <h6
                   style={{
                     border: "1px solid gray",
@@ -90,6 +141,7 @@ const Login = () => {
                     <div className="mb-4 text-start">
                       <label className="form-label">Username</label>
                       <input
+                        id="username"
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                           setUsername(e.target.value)
                         }
@@ -97,43 +149,40 @@ const Login = () => {
                         className="form-control input-box"
                         placeholder="Enter your username"
                         required
+                        value={username}
                       />
                     </div>
 
                     <div className="mb-3 text-start password-section">
                       <label className="form-label">Password</label>
-                      <div className="password-input-wrapper">
+                      <div className="password-input-wrapper position-relative">
                         <input
-                          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                            setPassword(e.target.value)
-                          }
-                          type={showpassword ? "text" : "password"}
-                          className="form-control input-box"
+                          className="form-control"
                           placeholder="Enter your password"
+                          type={showPassword ? "text" : "password"}
+                          id="password"
                           value={password}
+                          onChange={(e) => setPassword(e.target.value)}
                           required
                         />
-                        {showpassword ? (
-                          <span
-                            onClick={() => setShowPassword(false)}
-                            className="input-group-text"
-                          >
-                            <i className="fa-regular fa-eye"></i>
-                          </span>
-                        ) : (
-                          <span
-                            onClick={() => setShowPassword(true)}
-                            className="input-group-text"
-                          >
-                            <i className="fa-regular fa-eye-slash"></i>
-                          </span>
-                        )}
+                        <span onClick={() => setShowPassword(!showPassword)}>
+                          <i
+                            className={`fa-regular ${
+                              showPassword ? "fa-eye" : "fa-eye-slash"
+                            } password-icon`}
+                          ></i>
+                        </span>
                       </div>
                     </div>
-
                     <div className="d-flex justify-content-between align-items-center">
                       <div className="remember-check-box">
-                        <input type="checkbox" id="remember" />
+                        <input
+                          type="checkbox"
+                          id="remember"
+                          className="form-check-input"
+                          checked={rememberMe}
+                          onChange={(e) => setRememberMe(e.target.checked)}
+                        />
                         <label htmlFor="remember" className="remember">
                           Remember me
                         </label>
@@ -147,8 +196,9 @@ const Login = () => {
                       <button
                         type="submit"
                         className="btn btn-login text-center mt-4 w-100"
+                        disabled={loading}
                       >
-                        Login
+                        {loading ? "Logging in..." : "Login"}
                       </button>
                     </div>
                   </form>

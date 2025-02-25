@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Background Styling */
+.login-variant-6 .hero-section {
+    width: 100%;
+    height: auto;
+    background-color: var(--primary-color);
+    padding: 40px 20px 70px;
+    color: var(--white-color);
+    position: relative;
+}
+
+.login-variant-6 .logo-section {
+    width: 100%;
+    height: auto;
+    margin-bottom: 60px;
+}
+
+
+/* ================= logged users list ============== */
+
+
+
+.login-variant-6 .logged-users {
+    max-width: 600px;
+    margin: 80px 0px 0px 100px;
+    position: absolute;
+}
+
+.login-variant-6 .logged-users p {
+    color: var(--black-color);
+}
+
+.login-variant-6 .logged-users .user-card {
+    background: var(--card-bg-color);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    transition: 0.3s ease-in-out;
+}
+
+.login-variant-6 .logged-users .user-card:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-variant-6 .logged-users .user-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.login-variant-6 .logged-users .user-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #222;
+}
+
+.login-variant-6 .logged-users .user-status {
+    font-size: 14px;
+    color: #777;
+}
+
+.login-variant-6 .logged-users .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    /* background: var(); */
+    background: var(--card-bg-color);
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* =================================== */
+
+.login-variant-6 .left-side-block {
+    display: flex;
+    width: 70%;
+}
+
+.login-variant-6 .signin-text-block h5 {
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.login-variant-6 .signin-text-block p {
+    font-size: 14px;
+    width: 320px;
+    font-weight: 100;
+}
+
+.login-variant-6 .left-side-block .bg-image img {
+    width: 370px;
+    height: auto;
+    position: absolute;
+    top: 3px;
+}
+
+/* Form Container */
+.login-variant-6 .signin-form {
+    background: var(--white-color);
+    padding: 40px 30px;
+    border-radius: 30px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 35%;
+    left: 54%;
+    transform: translateY(0%);
+    width: 35%;
+    color: var(--black-color);
+}
+
+.login-variant-6 .signin-sub-title {
+    font-size: 16px;
+}
+
+.login-variant-6 .signin-sub-title span {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.login-variant-6 .signin-heading {
+    font-weight: 500;
+    font-size: 40px;
+
+}
+
+.login-variant-6 .form-login {
+    margin-top: 40px;
+}
+
+.login-variant-6 .form-login label {
+    font-size: 13px;
+}
+
+.login-variant-6 .input-field {
+    padding: 15px 15px;
+    font-size: 13px;
+    border: 1px solid var(--border-color);
+}
+
+.login-variant-6 .input-field::placeholder {
+    color: var(--placeholder-color);
+    font-weight: 200;
+}
+
+.login-variant-6 .input-field:focus {
+    border: 1px solid var(--primary-color);
+    box-shadow: none;
+}
+
+.login-variant-6 .forgot-pass {
+    font-size: 13px;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.login-variant-6 .signin-btn {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+}
+
+.login-variant-6 .signin-btn:hover {
+    background-color: var(--primary-hover);
+    color: var(--white-color);
+}
+
+@media only screen and (min-width:1688px) and (max-width:1909px) {
+    .login-variant-6 .left-side-block .bg-image img {
+        width: 300px;
+        top: 30%;
+        left: 30%;
+    }
+
+    .login-variant-6 .signin-form {
+        width: 30%;
+    }
+}
+
+@media only screen and (min-width:1215px) and (max-width:1500px) {
+    .login-variant-6 .left-side-block .bg-image img {
+        width: 300px;
+        top: 30%;
+        left: 30%;
+    }
+}
+
+@media only screen and (min-width:1025px) and (max-width:1214px) {
+    .login-variant-6 .left-side-block .bg-image img {
+        width: 250px;
+        top: 30%;
+        left: 30%;
+    }
+
+    .login-variant-6 .signin-form {
+        width: 40%;
+        top: 40%;
+    }
+}
+
+@media only screen and (min-width:992px) and (max-width:1024px) {
+    .login-variant-6 .left-side-block .bg-image img {
+        width: 250px;
+        top: 30%;
+        left: 30%;
+    }
+
+    .login-variant-6 .signin-form {
+        width: 40%;
+        top: 40%;
+    }
+
+    .login-variant-6 .logged-users {
+        max-width: 600px;
+        margin: 80px 0px 0px 20px;
+        position: absolute;
+    }
+
+}
+
+@media only screen and (max-width:991px) {
+
+    .signin-text-block,
+    .bg-image {
+        display: none;
+    }
+
+    .login-variant-6 .logged-users{
+        display: none;
+    }
+
+    .login-variant-6 .signin-form {
+        position: inherit;
+        width: 100%;
+        margin: auto;
+    }
+
+    .login-variant-6 .left-side-block {
+        display: flex;
+        width: 80%;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width:767px) {
+    .login-variant-6 .left-side-block {
+        display: flex;
+        width: 100%;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width:575px) {
+    .login-variant-6 .hero-section {
+        padding: 40px 10px 70px;
+    }
+
+    .login-variant-6 .input-field {
+        padding: 10px;
+    }
+}

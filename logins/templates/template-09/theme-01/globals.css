@@ -1,0 +1,8 @@
+:root {
+    --primary-color: #1FB7CC;
+    --primary-color-rgba: rgba(31, 183, 204, 0.25); 
+    --black-color: #000;
+    --white-color: #fff;
+    --border-color: #c1c1c1;
+    --placeholder-color:#cecece;
+}

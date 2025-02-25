@@ -102,17 +102,17 @@ body {
     background-color: var(--primary-color);
 }
 
-.login-variant-1 .remember-check-box input[type="checkbox"]::before {
+/* .login-variant-1 .remember-check-box input[type="checkbox"]::before {
     content: "✔";
-    color: var(--white-color);
+    color: #000;
     /* White tick mark */
-    font-size: 14px;
+    /* font-size: 14px;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    display: none;
-}
+    display: none; */
+/* } */ 
 
 .login-variant-1 .remember-check-box input[type="checkbox"]:checked::before {
     display: block;
@@ -172,6 +172,14 @@ body {
     object-position: top center;
     border-radius: 30px;
 }
+.password-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Adjust as needed */
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #777; /* Adjust color */
+  }
 
 @media only screen and (max-width:991px) {
     .login-variant-1 .right-image-container {
